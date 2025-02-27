@@ -8,9 +8,6 @@ on:
     paths:
       - '.github/workflows/rolling-stack-build.yml'
       - 'ros_controls.rolling.repos'
-  schedule:
-    # Run every morning to detect flakiness and broken dependencies
-    - cron: '03 1 * * *'
 
 jobs:
   stack-build:
