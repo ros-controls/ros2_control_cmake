@@ -3,7 +3,7 @@
 <package format="3">
   <name>ros2_control_cmake</name>
   <version>0.0.0</version>
-  <description>This package provides CMake macros</description>
+  <description>Provides CMake macros used by the ros2_control framework</description>
   <maintainer email="christoph.froehlich@ait.ac.at">Christoph Froehlich</maintainer>
 
   <license>Apache-2.0</license>
