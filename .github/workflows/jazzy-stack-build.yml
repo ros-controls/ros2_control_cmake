@@ -8,6 +8,10 @@ on:
     paths:
       - '.github/workflows/jazzy-stack-build.yml'
       - 'ros_controls.jazzy.repos'
+      - 'ros2_control_cmake/**'
+  push:
+    branches:
+      - master
 
 jobs:
   stack-build:
