@@ -1,4 +1,4 @@
-name: Jazzy Stack Build
+name: Jazzy Downstream Build
 # author: Christoph Froehlich <christoph.froehlich@ait.ac.at>
 # description: 'Build the stack.'
 
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - '.github/workflows/jazzy-stack-build.yml'
+      - '.github/workflows/jazzy-downstream-build.yml'
       - 'ros_controls.jazzy.repos'
       - 'ros2_control_cmake/**'
   push:
@@ -19,6 +19,9 @@ jobs:
     with:
       ros_distro: jazzy
       ros_repo: testing
-      target_workspace: ros_controls.jazzy.repos
       ref_for_scheduled_build: master
+      # we don't test target_workspace, we just build it
       not_test_build: true
+      # we don't test the downstream packages, we just try to build it
+      downstream_workspace: ros_controls.rolling.repos
+      not_test_downstream: true
