@@ -14,7 +14,7 @@
 
 # Macro to extract GCC_MAJOR_VERSION and GCC_MINOR_VERSION
 macro(extract_gcc_version)
-  if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     string(REPLACE "." ";" VERSION_LIST ${CMAKE_CXX_COMPILER_VERSION})
     list(GET VERSION_LIST 0 GCC_MAJOR_VERSION)
     list(GET VERSION_LIST 1 GCC_MINOR_VERSION)
@@ -22,10 +22,10 @@ macro(extract_gcc_version)
     message(STATUS "Detected GCC Version: ${CMAKE_CXX_COMPILER_VERSION} (Major: ${GCC_MAJOR_VERSION}, Minor: ${GCC_MINOR_VERSION})")
 
     # Convert to a number to avoid string comparison issues
-    if (GCC_MAJOR_VERSION MATCHES "^[0-9]+$")
+    if(GCC_MAJOR_VERSION MATCHES "^[0-9]+$")
       math(EXPR GCC_MAJOR_VERSION "${GCC_MAJOR_VERSION}")
     endif()
-    if (GCC_MINOR_VERSION MATCHES "^[0-9]+$")
+    if(GCC_MINOR_VERSION MATCHES "^[0-9]+$")
       math(EXPR GCC_MINOR_VERSION "${GCC_MINOR_VERSION}")
     endif()
   endif()
@@ -40,9 +40,9 @@ macro(set_compiler_options)
     message(STATUS "Compiler warnings enabled for ${CMAKE_CXX_COMPILER_ID}")
 
     # Extract major version if g++ is used
-    if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
       extract_gcc_version()
-      if (DEFINED GCC_MAJOR_VERSION AND GCC_MAJOR_VERSION GREATER 10)
+      if(DEFINED GCC_MAJOR_VERSION AND GCC_MAJOR_VERSION GREATER 10)
         # GCC 11 introduced -Werror=range-loop-construct
         add_compile_options(-Werror=range-loop-construct)
       endif()

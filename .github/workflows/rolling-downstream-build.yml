@@ -1,4 +1,4 @@
-name: Rolling Stack Build
+name: Rolling Downstream Build
 # author: Christoph Froehlich <christoph.froehlich@ait.ac.at>
 # description: 'Build the stack.'
 
@@ -6,8 +6,12 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - '.github/workflows/rolling-stack-build.yml'
+      - '.github/workflows/rolling-downstream-build.yml'
       - 'ros_controls.rolling.repos'
+      - 'ros2_control_cmake/**'
+  push:
+    branches:
+      - master
 
 jobs:
   stack-build:
@@ -15,6 +19,9 @@ jobs:
     with:
       ros_distro: rolling
       ros_repo: testing
-      target_workspace: ros_controls.rolling.repos
       ref_for_scheduled_build: master
+      # we don't test target_workspace, we just build it
       not_test_build: true
+      # we don't test the downstream packages, we just try to build it
+      downstream_workspace: ros_controls.rolling.repos
+      not_test_downstream: true
