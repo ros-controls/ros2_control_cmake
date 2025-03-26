@@ -2,8 +2,8 @@
 Changelog for package ros2_control_cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.1 (2025-03-26)
+------------------
 * Touch up the repo (`#4 <https://github.com/ros-controls/ros2_control_cmake/issues/4>`_)
 * Contributors: Christoph Fröhlich
 
