@@ -25,5 +25,5 @@ export_windows_symbols()
 | Distribution | Repository Link | Build Status |
 |--------------|-----------------|--------------|
 | Humble      | [master](https://github.com/ros-controls/ros2_control_cmake/tree/master) | not created yet |
-| Jazzy     | [master](https://github.com/ros-controls/ros2_control_cmake/tree/master) | [![Jazzy Downstream Build](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/jazzy-downstream-build.yml/badge.svg?branch=master)](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/jazzy-downstream-build.yml) |
-| Rolling     | [master](https://github.com/ros-controls/ros2_control_cmake/tree/master) | [![Rolling Downstream Build](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/rolling-downstream-build.yml/badge.svg?branch=master)](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/rolling-downstream-build.yml) |
+| Jazzy     | [master](https://github.com/ros-controls/ros2_control_cmake/tree/master) | [![Jazzy Build](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/jazzy-build.yml/badge.svg?branch=master)](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/jazzy-build.yml) |
+| Rolling     | [master](https://github.com/ros-controls/ros2_control_cmake/tree/master) | [![Rolling Build](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/rolling-build.yml/badge.svg?branch=master)](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/rolling-build.yml) |
