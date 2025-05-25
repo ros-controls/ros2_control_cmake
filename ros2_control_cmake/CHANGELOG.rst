@@ -2,8 +2,8 @@
 Changelog for package ros2_control_cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.0 (2025-05-25)
+------------------
 * Add compiler standards (`#7 <https://github.com/ros-controls/ros2_control_cmake/issues/7>`_)
 * Contributors: Christoph Fröhlich
 
