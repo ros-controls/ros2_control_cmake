@@ -39,6 +39,14 @@ macro(set_compiler_options)
                         -Werror=missing-braces)
     message(STATUS "Compiler warnings enabled for ${CMAKE_CXX_COMPILER_ID}")
 
+    # https://docs.ros.org/en/rolling/How-To-Guides/Ament-CMake-Documentation.html#compiler-and-linker-options
+    if(NOT CMAKE_C_STANDARD)
+      set(CMAKE_C_STANDARD 99)
+    endif()
+    if(NOT CMAKE_CXX_STANDARD)
+      set(CMAKE_CXX_STANDARD 17)
+    endif()
+
     # Extract major version if g++ is used
     if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
       extract_gcc_version()
