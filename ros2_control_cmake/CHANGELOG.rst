@@ -2,6 +2,11 @@
 Changelog for package ros2_control_cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Bump CMake minimum version (`#8 <https://github.com/ros-controls/ros2_control_cmake/issues/8>`_)
+* Contributors: mosfet80
+
 0.2.0 (2025-05-25)
 ------------------
 * Add compiler standards (`#7 <https://github.com/ros-controls/ros2_control_cmake/issues/7>`_)
