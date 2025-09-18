@@ -35,6 +35,7 @@ endmacro()
 macro(set_compiler_options)
   if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
     add_compile_options(-Wall -Wextra -Wpedantic
+                        -Wshadow -Wconversion -Wsign-conversion -Wold-style-cast
                         -Werror=conversion
                         -Werror=format
                         -Werror=missing-braces
