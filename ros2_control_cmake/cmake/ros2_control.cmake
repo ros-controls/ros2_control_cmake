@@ -34,9 +34,18 @@ endmacro()
 # set compiler options depending on detected compiler
 macro(set_compiler_options)
   if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
-    add_compile_options(-Wall -Wextra -Wpedantic -Werror=conversion -Werror=unused-but-set-variable
-                        -Werror=return-type -Werror=shadow -Werror=format
-                        -Werror=missing-braces)
+    add_compile_options(-Wall -Wextra -Wpedantic
+                        -Werror=conversion
+                        -Werror=format
+                        -Werror=missing-braces
+                        -Werror=overflow
+                        -Werror=return-type
+                        -Werror=shadow
+                        -Werror=sign-compare
+                        -Werror=unused-but-set-variable
+                        -Werror=unused-const-variable
+                        -Werror=unused-variable
+                        )
     message(STATUS "Compiler warnings enabled for ${CMAKE_CXX_COMPILER_ID}")
 
     # https://docs.ros.org/en/rolling/How-To-Guides/Ament-CMake-Documentation.html#compiler-and-linker-options
