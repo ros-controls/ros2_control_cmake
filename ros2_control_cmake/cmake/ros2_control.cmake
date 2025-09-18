@@ -34,18 +34,19 @@ endmacro()
 # set compiler options depending on detected compiler
 macro(set_compiler_options)
   if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
-    add_compile_options(-Wall -Wextra -Wpedantic
-                        -Wshadow -Wconversion -Wold-style-cast
-                        -Werror=conversion
-                        -Werror=format
-                        -Werror=missing-braces
-                        -Werror=overflow
-                        -Werror=return-type
-                        -Werror=shadow
-                        -Werror=sign-compare
-                        -Werror=unused-but-set-variable
-                        -Werror=unused-variable
-                        )
+    add_compile_options(
+      -Wall -Wextra -Wpedantic
+      -Wshadow -Wconversion -Wold-style-cast
+      -Werror=conversion
+      -Werror=format
+      -Werror=missing-braces
+      -Werror=overflow
+      -Werror=return-type
+      -Werror=shadow
+      -Werror=sign-compare
+      -Werror=unused-but-set-variable
+      -Werror=unused-variable
+    )
     message(STATUS "Compiler warnings enabled for ${CMAKE_CXX_COMPILER_ID}")
 
     # https://docs.ros.org/en/rolling/How-To-Guides/Ament-CMake-Documentation.html#compiler-and-linker-options
@@ -55,6 +56,8 @@ macro(set_compiler_options)
     if(NOT CMAKE_CXX_STANDARD)
       set(CMAKE_CXX_STANDARD 17)
     endif()
+
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
     # Extract major version if g++ is used
     if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
@@ -68,6 +71,7 @@ macro(set_compiler_options)
     if(CMAKE_CXX_COMPILER_ID MATCHES "(Clang)")
       add_compile_options(
         -Wshadow=all
+        -Wthread-safety
       )
     endif()
   endif()
