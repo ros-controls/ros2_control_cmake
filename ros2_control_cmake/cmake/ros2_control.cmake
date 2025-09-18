@@ -36,7 +36,6 @@ macro(set_compiler_options)
   if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
     add_compile_options(-Wall -Wextra -Wpedantic
                         -Wshadow -Wconversion -Wold-style-cast
-                        -Wsign-conversion  # noisy with gmock headers
                         -Werror=conversion
                         -Werror=format
                         -Werror=missing-braces
