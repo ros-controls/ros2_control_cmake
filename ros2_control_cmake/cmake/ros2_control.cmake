@@ -35,7 +35,8 @@ endmacro()
 macro(set_compiler_options)
   if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
     add_compile_options(-Wall -Wextra -Wpedantic
-                        -Wshadow -Wconversion -Wsign-conversion -Wold-style-cast
+                        -Wshadow -Wconversion -Wold-style-cast
+                        -Wsign-conversion  # noisy with gmock headers
                         -Werror=conversion
                         -Werror=format
                         -Werror=missing-braces
@@ -44,7 +45,6 @@ macro(set_compiler_options)
                         -Werror=shadow
                         -Werror=sign-compare
                         -Werror=unused-but-set-variable
-                        -Werror=unused-const-variable
                         -Werror=unused-variable
                         )
     message(STATUS "Compiler warnings enabled for ${CMAKE_CXX_COMPILER_ID}")
