@@ -74,6 +74,12 @@ macro(set_compiler_options)
         -Werror=shadow-all
         -Wthread-safety
       )
+
+      add_compile_options(
+        -Wno-unused-const-variable  # for gmock
+        -Wno-gnu-zero-variadic-macro-arguments  # deactivate for pal_statistics
+        -Wno-delete-non-abstract-non-virtual-dtor  # ros2_control::MovingAverageStatistics
+      )
     endif()
   endif()
 endmacro()
