@@ -70,7 +70,8 @@ macro(set_compiler_options)
 
     if(CMAKE_CXX_COMPILER_ID MATCHES "(Clang)")
       add_compile_options(
-        -Wshadow=all
+        -Wshadow-all
+        -Werror=shadow-all
         -Wthread-safety
       )
     endif()
