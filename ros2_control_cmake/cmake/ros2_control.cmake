@@ -64,6 +64,12 @@ macro(set_compiler_options)
         add_compile_options(-Werror=range-loop-construct)
       endif()
     endif()
+
+    if(CMAKE_CXX_COMPILER_ID MATCHES "(Clang)")
+      add_compile_options(
+        -Wshadow=all
+      )
+    endif()
   endif()
 endmacro()
 
