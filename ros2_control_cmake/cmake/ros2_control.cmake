@@ -34,9 +34,19 @@ endmacro()
 # set compiler options depending on detected compiler
 macro(set_compiler_options)
   if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
-    add_compile_options(-Wall -Wextra -Wpedantic -Werror=conversion -Werror=unused-but-set-variable
-                        -Werror=return-type -Werror=shadow -Werror=format
-                        -Werror=missing-braces)
+    add_compile_options(
+      -Wall -Wextra -Wpedantic
+      -Wshadow -Wconversion -Wold-style-cast
+      -Werror=conversion
+      -Werror=format
+      -Werror=missing-braces
+      -Werror=overflow
+      -Werror=return-type
+      -Werror=shadow
+      -Werror=sign-compare
+      -Werror=unused-but-set-variable
+      -Werror=unused-variable
+    )
     message(STATUS "Compiler warnings enabled for ${CMAKE_CXX_COMPILER_ID}")
 
     # https://docs.ros.org/en/rolling/How-To-Guides/Ament-CMake-Documentation.html#compiler-and-linker-options
@@ -47,6 +57,8 @@ macro(set_compiler_options)
       set(CMAKE_CXX_STANDARD 17)
     endif()
 
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
     # Extract major version if g++ is used
     if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
       extract_gcc_version()
@@ -54,6 +66,16 @@ macro(set_compiler_options)
         # GCC 11 introduced -Werror=range-loop-construct
         add_compile_options(-Werror=range-loop-construct)
       endif()
+    endif()
+
+    if(CMAKE_CXX_COMPILER_ID MATCHES "(Clang)")
+      add_compile_options(
+        -Wshadow-all
+        -Werror=shadow-all
+        -Wthread-safety
+        -Wno-unused-const-variable  # for gmock
+        -Wno-gnu-zero-variadic-macro-arguments  # deactivate for pal_statistics
+      )
     endif()
   endif()
 endmacro()

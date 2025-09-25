@@ -25,3 +25,17 @@ jobs:
       # we don't test the downstream packages, we just try to build it
       downstream_workspace: ros_controls.rolling.repos
       not_test_downstream: true
+  stack-build-clang:
+    uses: ros-controls/ros2_control_ci/.github/workflows/reusable-industrial-ci-with-cache.yml@master
+    with:
+      ros_distro: rolling
+      ros_repo: testing
+      ref_for_scheduled_build: master
+      additional_debs: clang
+      c_compiler: clang
+      cxx_compiler: clang++
+      # we don't test target_workspace, we just build it
+      not_test_build: true
+      # we don't test the downstream packages, we just try to build it
+      downstream_workspace: ros_controls.rolling.repos
+      not_test_downstream: true
