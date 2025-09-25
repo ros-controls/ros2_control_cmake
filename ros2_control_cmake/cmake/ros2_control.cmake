@@ -73,9 +73,6 @@ macro(set_compiler_options)
         -Wshadow-all
         -Werror=shadow-all
         -Wthread-safety
-      )
-
-      add_compile_options(
         -Wno-unused-const-variable  # for gmock
         -Wno-gnu-zero-variadic-macro-arguments  # deactivate for pal_statistics
       )
