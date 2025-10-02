@@ -2,6 +2,11 @@
 Changelog for package ros2_control_cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update compiler options (`#15 <https://github.com/ros-controls/ros2_control_cmake/issues/15>`_)
+* Contributors: Christoph Fröhlich
+
 0.2.1 (2025-06-06)
 ------------------
 * Bump CMake minimum version (`#8 <https://github.com/ros-controls/ros2_control_cmake/issues/8>`_)
