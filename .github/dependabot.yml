@@ -13,3 +13,10 @@ updates:
       interval: "weekly"
     ignore:
       - dependency-name: "codecov/codecov-action"
+  - package-ecosystem: "github-actions"
+    # Workflow files stored in the
+    # default location of `.github/workflows`
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "jazzy"
