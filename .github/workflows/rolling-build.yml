@@ -9,6 +9,8 @@ on:
       - '.github/workflows/rolling-build.yml'
       - 'ros_controls.rolling.repos'
       - 'ros2_control_cmake/**'
+    branches:
+      - master
   push:
     branches:
       - master

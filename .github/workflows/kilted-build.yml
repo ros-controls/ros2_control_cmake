@@ -9,9 +9,11 @@ on:
       - '.github/workflows/kilted-build.yml'
       - 'ros_controls.kilted.repos'
       - 'ros2_control_cmake/**'
+    branches:
+      - jazzy
   push:
     branches:
-      - master
+      - jazzy
 
 jobs:
   stack-build:
