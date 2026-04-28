@@ -2,8 +2,8 @@
 Changelog for package ros2_control_cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.0 (2026-04-28)
+------------------
 * Default to C++20 if available (`#30 <https://github.com/ros-controls/ros2_control_cmake/issues/30>`_)
 * Contributors: Christoph Fröhlich
 
