@@ -2,8 +2,8 @@
 Changelog for package ros2_control_cmake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2026-04-28)
+------------------
 * Set CMAKE_CXX_STANDARD to 20 (`#28 <https://github.com/ros-controls/ros2_control_cmake/issues/28>`_)
 * Contributors: Christoph Fröhlich
 
