@@ -24,7 +24,8 @@ export_windows_symbols()
 
 | Distribution | Repository Link | Build Status |
 |--------------|-----------------|--------------|
-| Humble      | [master](https://github.com/ros-controls/ros2_control_cmake/tree/master) | not created yet |
+| Humble      |  | not created yet |
 | Jazzy     | [jazzy](https://github.com/ros-controls/ros2_control_cmake/tree/master) | [![Jazzy Build](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/jazzy-build.yml/badge.svg?branch=jazzy)](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/jazzy-build.yml) |
 | Kilted     | [jazzy](https://github.com/ros-controls/ros2_control_cmake/tree/master) | [![Kilted Build](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/kilted-build.yml/badge.svg?branch=jazzy)](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/kilted-build.yml) |
+| Lyrical     | [master](https://github.com/ros-controls/ros2_control_cmake/tree/master) | see below |
 | Rolling     | [master](https://github.com/ros-controls/ros2_control_cmake/tree/master) | [![Rolling Build](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/rolling-build.yml/badge.svg?branch=master)](https://github.com/ros-controls/ros2_control_cmake/actions/workflows/rolling-build.yml) |
