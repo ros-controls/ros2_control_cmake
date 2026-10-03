@@ -33,6 +33,17 @@ endmacro()
 
 # set compiler options depending on detected compiler
 macro(set_compiler_options)
+
+  # https://docs.ros.org/en/rolling/How-To-Guides/Ament-CMake-Documentation.html#compiler-and-linker-options
+  if(NOT CMAKE_C_STANDARD)
+    set(CMAKE_C_STANDARD 99)
+  endif()
+  if(NOT CMAKE_CXX_STANDARD)
+    set(CMAKE_CXX_STANDARD 20)
+  endif()
+
+  set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
   if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
     add_compile_options(
       -Wall -Wextra -Wpedantic
@@ -48,16 +59,6 @@ macro(set_compiler_options)
       -Werror=unused-variable
     )
     message(STATUS "Compiler warnings enabled for ${CMAKE_CXX_COMPILER_ID}")
-
-    # https://docs.ros.org/en/rolling/How-To-Guides/Ament-CMake-Documentation.html#compiler-and-linker-options
-    if(NOT CMAKE_C_STANDARD)
-      set(CMAKE_C_STANDARD 99)
-    endif()
-    if(NOT CMAKE_CXX_STANDARD)
-      set(CMAKE_CXX_STANDARD 20)
-    endif()
-
-    set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
     # Extract major version if g++ is used
     if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
